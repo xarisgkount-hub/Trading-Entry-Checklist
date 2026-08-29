@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trading Entry Checklist</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Trading Execution & Journal</h2>
+
+    <div class="card">
+      <h3>1. Entry Checkliste</h3>
+      <div id="checklist">
+        <label><input type="checkbox" class="check-item"> Liegt der Preis an einer Key Liquidity Zone / FVG?</label>
+        <label><input type="checkbox" class="check-item"> Market Structure Shift (MSS / CHoCH) bestätigt?</label>
+        <label><input type="checkbox" class="check-item"> Risk-to-Reward Ratio (CRV) mind. 1:2?</label>
+        <label><input type="checkbox" class="check-item"> Keine High-Impact News in den nächsten 30 Min?</label>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>2. Trade Loggen</h3>
+      <form id="tradeForm">
+        <div class="grid">
+          <input type="text" id="asset" placeholder="Asset (z.B. XAU/USD)" required>
+          <select id="direction">
+            <option value="Long">Long</option>
+            <option value="Short">Short</option>
+          </select>
+          <input type="number" id="pnl" step="0.01" placeholder="P&L ($ oder R)" required>
+          <select id="outcome">
+            <option value="WIN">WIN</option>
+            <option value="LOSS">LOSS</option>
+            <option value="BE">Break Even</option>
+          </select>
+        </div>
+        <button type="submit" id="submitBtn" disabled>Trade Freischalten & Speichern</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>3. Performance Dashboard</h3>
+      <div class="stats">
+        <div>Total Trades: <span id="totalTrades">0</span></div>
+        <div>Win Rate: <span id="winRate">0%</span></div>
+        <div>Gesamt P&L: <span id="totalPnl">0</span></div>
+      </div>
+      <ul id="journalList"></ul>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
